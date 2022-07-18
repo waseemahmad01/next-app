@@ -1,0 +1,26 @@
+.title {
+  position: relative;
+  display: inline-block;
+  line-height: 60px;
+}
+.title::before {
+  content: '';
+  height: 4px;
+  border-radius: 2px;
+  width: 30%;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  background-color: var(--clr-primary);
+  transition: width 0.3s ease;
+}
+
+.title:hover::before {
+  width: 100%;
+}
+
+.formContainer {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,29 @@
+.title {
+  position: relative;
+  display: inline-block;
+  line-height: 60px;
+}
+.title::before {
+  content: '';
+  height: 4px;
+  border-radius: 2px;
+  width: 30%;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  background-color: var(--clr-primary);
+  transition: width 0.3s ease;
+}
+
+.title:hover::before {
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  padding-inline: 50px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  margin-top: 50px;
+  align-items: stretch;
+}
