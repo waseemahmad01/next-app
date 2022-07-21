@@ -2,6 +2,9 @@
   border-radius: 10px;
   overflow: hidden;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .product_image {
@@ -16,6 +19,7 @@
 
 .product_details {
   padding: 20px 30px;
+  margin-bottom: auto;
 }
 
 .product_details .description {

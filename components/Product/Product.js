@@ -1,9 +1,10 @@
 import classNames from 'classnames';
 import React from 'react';
+import Link from 'next/link';
 
 import classes from './product.module.css';
 
-const Product = () => {
+const Product = ({ data }) => {
   return (
     <div className={classes.card}>
       <div className={classes.product_image}>
@@ -14,11 +15,14 @@ const Product = () => {
       </div>
       <div className={classes.product_details}>
         <h3 className='bold'>Description</h3>
-        <p className={classes.description}>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis
-          doloribus voluptatum neque aperiam illum delectus numquam provident
-          vel id dolorum.
-        </p>
+        <p className={classes.description}>{data.description}</p>
+        <div style={{ marginBlock: '10px' }}>
+          <Link href={`/products/${data._id}`}>
+            <span style={{ cursor: 'pointer', textDecoration: 'underline' }}>
+              View details
+            </span>
+          </Link>
+        </div>
         <div
           className={classNames(
             classes.options,
@@ -26,17 +30,18 @@ const Product = () => {
           )}
         >
           <p>
-            <span>Name: </span> Product name
+            <span>Name: </span> {data.name}
           </p>
           <p>
-            <span>In stock: </span> 100
+            <span>In stock: </span> {data.quantity}
           </p>
 
           <p>
-            <span>Price: </span> $10.5
+            <span>Price: </span> ${data.price}
           </p>
         </div>
       </div>
+
       <div style={{ paddingInline: '30px' }}>
         <button className={classes.cart_button}>Add to cart</button>
       </div>
