@@ -22,8 +22,7 @@ const ProductForm = () => {
     e.preventDefault();
     console.log(data);
 
-    const url =
-      'https://62d9563ffb25e300089856e2--earnest-crepe-777c06.netlify.app/api/products';
+    const url = 'https://earnest-crepe-777c06.netlify.app/api/products';
 
     const res = await fetch(url, {
       method: 'POST',
