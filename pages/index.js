@@ -24,7 +24,7 @@ const HomePage = ({ products }) => {
 
 export default HomePage;
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const client = await MongoClient.connect(
     'mongodb+srv://waseem:SPaC0fzbq2k8ZYqe@inventory.pppug.mongodb.net/?retryWrites=true&w=majority'
   );
@@ -43,7 +43,6 @@ export const getStaticProps = async () => {
     props: {
       products: productsList,
     },
-    revalidate: 1,
   };
 };
 

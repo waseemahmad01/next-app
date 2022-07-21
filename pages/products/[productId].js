@@ -19,23 +19,23 @@ const ProductDetails = data => {
 
 export default ProductDetails;
 
-export const getStaticPaths = async () => {
-  const client = await MongoClient.connect(
-    'mongodb+srv://waseem:SPaC0fzbq2k8ZYqe@inventory.pppug.mongodb.net/?retryWrites=true&w=majority'
-  );
-  const db = client.db();
-  const products = db.collection('products');
-  const data = await products.find().toArray();
-  client.close();
-  return {
-    paths: data
-      .slice(0, 3)
-      .map(e => ({ params: { productId: e._id.toString() } })),
-    fallback: 'blocking',
-  };
-};
+// export const getStaticPaths = async () => {
+//   const client = await MongoClient.connect(
+//     'mongodb+srv://waseem:SPaC0fzbq2k8ZYqe@inventory.pppug.mongodb.net/?retryWrites=true&w=majority'
+//   );
+//   const db = client.db();
+//   const products = db.collection('products');
+//   const data = await products.find().toArray();
+//   client.close();
+//   return {
+//     paths: data
+//       .slice(0, 3)
+//       .map(e => ({ params: { productId: e._id.toString() } })),
+//     fallback: 'blocking',
+//   };
+// };
 
-export const getStaticProps = async context => {
+export const getServerSideProps = async context => {
   const productId = context.params.productId;
 
   const client = await MongoClient.connect(
