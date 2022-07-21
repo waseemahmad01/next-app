@@ -1,6 +1,13 @@
 import { MongoClient } from 'mongodb';
 
+import NextCors from 'nextjs-cors';
+
 async function handler(req, res) {
+  await NextCors(req, res, {
+    methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+    origin: '*',
+    optionsSuccessStatus: 200,
+  });
   const client = await MongoClient.connect(
     'mongodb+srv://waseem:SPaC0fzbq2k8ZYqe@inventory.pppug.mongodb.net/?retryWrites=true&w=majority'
   );
