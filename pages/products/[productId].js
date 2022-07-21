@@ -52,6 +52,5 @@ export const getServerSideProps = async context => {
         _id: data._id.toString(),
       },
     },
-    revalidate: 1,
   };
 };
