@@ -22,7 +22,7 @@ const ProductForm = () => {
     e.preventDefault();
     console.log(data);
 
-    const url = 'https://stupefied-montalcini-46dd9b.netlify.app/api/products';
+    const url = 'https://earnest-crepe-777c06.netlify.app/api/products';
 
     const res = await fetch(url, {
       method: 'POST',
